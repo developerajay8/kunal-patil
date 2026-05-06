@@ -1,42 +1,23 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import LeadPopup from "./leadpopup";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  useEffect(() => {
+  const handleToggleVideo = () => {
     const video = videoRef.current;
 
     if (video) {
-      video.muted = false;
-      video.volume = 1;
-
-      const playPromise = video.play();
-
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            console.log("Autoplay with sound worked 🎉");
-          })
-          .catch(() => {
-            video.muted = true;
-            setIsMuted(true);
-            video.play();
-          });
+      if (isPlaying) {
+        video.pause();
+        setIsPlaying(false);
+      } else {
+        video.play();
+        setIsPlaying(true);
       }
-    }
-  }, []);
-
-  const handleUnmute = () => {
-    const video = videoRef.current;
-    if (video) {
-      video.muted = false;
-      video.volume = 1;
-      setIsMuted(false);
-      video.play();
     }
   };
 
@@ -67,7 +48,6 @@ export default function Hero() {
           }
         />
 
-        {/* ✅ Trust Line */}
         <p className="text-xs text-gray-400">
           Join 800+ girls who have already started building their own income
         </p>
@@ -75,13 +55,15 @@ export default function Hero() {
 
       {/* 🎥 Video */}
       <div className="mt-12 pb-12 w-full max-w-7xl relative">
-        <div className="rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+        <div 
+          className="rounded-2xl overflow-hidden border border-white/10 shadow-xl cursor-pointer"
+          onClick={handleToggleVideo}
+        >
           <video
             ref={videoRef}
             className="w-full h-full object-cover"
             loop
             playsInline
-            controls={false}
           >
             <source
               src="https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778058033/kunal_A_xehtvk.mp4"
@@ -89,14 +71,13 @@ export default function Hero() {
             />
           </video>
 
-          {/* 🔊 Unmute */}
-          {isMuted && (
-            <button
-              onClick={handleUnmute}
-              className="absolute bottom-5 right-5 bg-black/70 text-white px-4 py-2 rounded-lg"
-            >
-              🔊 Tap for Sound
-            </button>
+          {/* ▶️ Play Button Overlay */}
+          {!isPlaying && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="bg-black/60 px-6 py-3 rounded-lg text-white text-lg">
+                ▶ Tap to Play
+              </div>
+            </div>
           )}
         </div>
       </div>

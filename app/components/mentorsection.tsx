@@ -61,7 +61,7 @@ export default function MentorSection() {
               <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
                 <p className="font-semibold text-[#f35113]">✨ Today:</p>
                 <p className="text-gray-700 text-sm md:text-base">
-                  I help girls and beginners start from zero and build their own
+                  I help people and beginners start from zero and build their own
                   income using real-world skills.
                 </p>
               </div>

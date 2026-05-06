@@ -1,28 +1,36 @@
+
+
+
 "use client";
 
 import { useState } from "react";
 import { FaHeart, FaRegClock, FaShare } from "react-icons/fa";
 import LeadPopup from "./leadpopup";
 
+
 const videos = [
   {
     id: 1,
     src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778058310/IMG_6174_pqzslx.mp4",
+    thumbnail: "/1.png", // 👈 apni image
     caption: "From confused → started earning 💰",
   },
   {
     id: 2,
     src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778059247/IMG_6175_l3i9oy.mp4",
+    thumbnail: "/2.png",
     caption: "First income feeling ❤️",
   },
   {
     id: 3,
     src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778061206/IMG_6173_pcbq7r.mp4",
+    thumbnail: "/3.png",
     caption: "Started from zero 🚀",
   },
   {
     id: 4,
     src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778063785/IMG_6188_vhv9dz.mp4",
+    thumbnail: "/4.png",
     caption: "Now working with clients 💻",
   },
 ];
@@ -48,19 +56,19 @@ function VideoCard({ video, activeId, setActiveId }: any) {
         />
       ) : (
         <>
-          {/* ✅ Thumbnail via first frame */}
-          <video
-            src={video.src}
+          {/* ✅ Thumbnail Image */}
+          <img
+            src={video.thumbnail}
+            alt="video thumbnail"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            muted
-            autoPlay
-            loop
-            playsInline
           />
+
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/20"></div>
 
           {/* ▶ Play Button */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="w-12 h-12 rounded-full bg-black/40 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:bg-black/60 transition">
+            <div className="w-12 h-12 rounded-full bg-black/60 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:bg-black/80 transition">
               ▶
             </div>
           </div>
