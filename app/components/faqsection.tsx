@@ -50,7 +50,7 @@ export default function FAQSection() {
 
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#f35113]">
             Frequently Asked Questions
           </h2>
           <p className="text-gray-500 mt-3">
@@ -71,7 +71,7 @@ export default function FAQSection() {
                 {/* Question */}
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer bg-[#0b3a46]  transition"
+                  className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer bg-[#f35113]  transition"
                 >
                   <span className="font-medium text-white text-sm md:text-base">
                     {faq.question}
@@ -102,7 +102,7 @@ export default function FAQSection() {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <button className="bg-[#0b3a46] cursor-pointer text-white px-8 py-4 rounded-full text-lg font-medium hover:scale-105 transition">
+          <button className="bg-[#f35113] cursor-pointer text-white px-8 py-4 rounded-full text-lg font-medium hover:scale-105 transition">
             💬 Still have questions? Connect on WhatsApp
           </button>
         </div>

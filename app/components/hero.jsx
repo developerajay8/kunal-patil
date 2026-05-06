@@ -59,9 +59,7 @@ export default function Hero() {
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 mt-8">
 
-        <button className="bg-black border border-white/20 px-6 py-3 rounded-full text-sm hover:bg-white hover:text-black transition">
-          Get Started
-        </button>
+       
 
         <button className="bg-white text-black px-6 py-3 rounded-full text-sm font-medium hover:scale-105 transition">
           Connect to whatsapp

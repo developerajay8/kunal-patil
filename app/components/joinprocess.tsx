@@ -32,7 +32,7 @@ const steps = [
 export default function JoinProcess() {
   return (
     <section className="w-full py-20 px-6 md:px-16 
-    bg-[linear-gradient(135deg,#071c24_0%,#0b3a46_50%,#021014_100%)] text-white">
+    bg-[#f35113] text-white">
 
       <div className="max-w-7xl mx-auto text-center">
 
@@ -57,7 +57,7 @@ export default function JoinProcess() {
 
               {/* Number Circle */}
               <div className="w-12 h-12 flex items-center justify-center rounded-full 
-              bg-[white] text-[#0b3a46] font-bold mb-4">
+              bg-[white] text-[#f35113] font-bold mb-4">
                 {step.id}
               </div>
 
@@ -85,7 +85,7 @@ export default function JoinProcess() {
 
         {/* CTA */}
         <div className="mt-14">
-          <button className="bg-[white] cursor-pointer text-[#0b3a46]
+          <button className="bg-[white] cursor-pointer text-[#f35113]
           px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:scale-105 transition">
            💬 Connect to WhatsApp
           </button>

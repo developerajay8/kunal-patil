@@ -10,7 +10,7 @@ export default function MentorSection() {
       <div className="max-w-6xl mx-auto">
 
         {/* Card */}
-        <div className="bg-[linear-gradient(135deg,#071c24_0%,#0b3a46_50%,#021014_100%)] rounded-3xl p-6 md:p-10 shadow-xl">
+        <div className="bg-[#f35113] rounded-3xl p-6 md:p-10 shadow-xl">
 
           <div className="grid md:grid-cols-2 gap-10 items-center">
 
@@ -28,7 +28,7 @@ export default function MentorSection() {
             {/* RIGHT - CONTENT */}
             <div className="space-y-5">
 
-              <span className="inline-block bg-purple-100 text-[#0b3a46] px-4 py-1 rounded-full text-sm font-medium">
+              <span className="inline-block bg-purple-100 text-[#f35113] px-4 py-1 rounded-full text-sm font-medium">
                 🚀 Your Mentor
               </span>
 
@@ -37,7 +37,7 @@ export default function MentorSection() {
               </h2>
 
               <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
-                <p className="font-semibold text-[#0b3a46]">🎯 Mission:</p>
+                <p className="font-semibold text-[#f35113]">🎯 Mission:</p>
                 <p className="text-gray-700 text-sm md:text-base">
                   Build a Genuine Side Hustle From Home – No Experience Needed
                 </p>
@@ -57,22 +57,22 @@ export default function MentorSection() {
               </div>
 
               {/* CTA */}
-              <button className="mt-4 bg-[#0b3a46] text-white px-6 py-3 rounded-full text-sm font-medium hover:scale-105 transition">
+              <button className="mt-4 bg-[#f38458] text-white px-6 py-3 rounded-full text-sm font-medium hover:scale-105 transition">
                 Connect on WhatsApp
               </button>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mt-6">
-                <div className="bg-white rounded-xl p-4 text-center shadow">
-                  <h3 className="text-xl font-bold text-[#0b3a46]">1000+</h3>
+              <div className="grid grid-cols-3 sm:gap-4 mt-6">
+                <div className="bg-white sm:rounded-xl p-4 text-center shadow">
+                  <h3 className="text-xl font-bold text-[#f35113]">1000+</h3>
                   <p className="text-xs text-gray-500">Students Trained</p>
                 </div>
-                <div className="bg-white rounded-xl p-4 text-center shadow">
-                  <h3 className="text-xl font-bold text-[#0b3a46]">100%</h3>
+                <div className="bg-white sm:rounded-xl p-4 text-center shadow">
+                  <h3 className="text-xl font-bold text-[#f35113]">100%</h3>
                   <p className="text-xs text-gray-500">Practical</p>
                 </div>
-                <div className="bg-white rounded-xl p-4 text-center shadow">
-                  <h3 className="text-xl font-bold text-[#0b3a46]">24/7</h3>
+                <div className="bg-white sm:rounded-xl p-4 text-center shadow">
+                  <h3 className="text-xl font-bold text-[#f35113]">24/7</h3>
                   <p className="text-xs text-gray-500">Support</p>
                 </div>
               </div>

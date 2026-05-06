@@ -6,7 +6,7 @@ export default function finalcta() {
   return (
     <div>
        {/* Final CTA Section */}
-      <section className="py-20 px-4 bg-[linear-gradient(135deg,#071c24_0%,#0b3a46_50%,#021014_100%)] text-white">
+      <section className="py-20 px-4 bg-[#f35113] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Life?</h2>
           <p className="text-xl mb-8 opacity-90">

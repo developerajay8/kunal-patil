@@ -12,17 +12,17 @@ const videos = [
   },
   {
     id: 2,
-    src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778058310/IMG_6174_pqzslx.mp4",
+    src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778059247/IMG_6175_l3i9oy.mp4",
     caption: "I'm extremely...",
   },
   {
     id: 3,
-    src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778058310/IMG_6174_pqzslx.mp4",
+    src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778061206/IMG_6173_pcbq7r.mp4",
     caption: "Hey this is...",
   },
   {
     id: 4,
-    src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778058310/IMG_6174_pqzslx.mp4",
+    src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778063785/IMG_6188_vhv9dz.mp4",
     caption: "I'm extremely...",
   },
 ];
@@ -47,14 +47,14 @@ function VideoCard({
       onClick={() => setActiveId(isActive ? null : video.id)}
     >
       {isActive ? (
-        <video
-  src={video.src}
-  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-  muted
-  preload="metadata"
-  playsInline
-/>
-      ) : (
+  <video
+    src={video.src}
+    className="w-full h-full object-cover"
+    autoPlay
+    controls
+    playsInline
+  />
+) : (
         <>
           {/* ✅ Thumbnail अब video का first frame होगा */}
           <div className="absolute inset-0">
@@ -135,7 +135,7 @@ export default function VideoTestimonialsSection() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
 
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-[#0b3a46]">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#f35113]">
             Student Success Stories
           </h2>
           <p className="text-gray-500 mt-3">
@@ -155,7 +155,7 @@ export default function VideoTestimonialsSection() {
         </div>
 
         <div className="text-center mt-14 pb-12">
-          <button className="bg-[#0b3a46] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:scale-105 transition">
+          <button className="bg-[#f35113] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:scale-105 transition">
             💬 Connect to WhatsApp
           </button>
         </div>
