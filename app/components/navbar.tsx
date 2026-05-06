@@ -3,6 +3,7 @@
 "use client";
 
 import Link from "next/link";
+import LeadPopup from "./leadpopup";
 
 export default function Navbar() {
   return (
@@ -10,7 +11,7 @@ export default function Navbar() {
 
       {/* Logo */}
       <h1 className="text-xl md:text-2xl font-semibold tracking-wide text-white">
-        HEXA<span className="text-gray-300">CORE</span>
+        KUNAL<span className="text-gray-300">PATIL</span>
       </h1>
 
       {/* Menu Center */}
@@ -38,15 +39,26 @@ export default function Navbar() {
        
 
         {/* CTA */}
-        <button className="bg-[white] sm:block hidden cursor-pointer text-[#0b3a46]
-          px-6 py-3 rounded-full text-[16px] font-medium shadow-lg hover:scale-105 transition">
-           💬 Connect to WhatsApp
+        {/* Button 1 */}
+      <LeadPopup
+        trigger={
+          <button className="bg-white sm:block hidden cursor-pointer text-[#0b3a46]
+          px-6 py-3 rounded-full text-[16px] font-medium shadow-lg 
+          hover:scale-105 transition">
+            💬 Connect to WhatsApp
           </button>
+        }
+      />
 
+<LeadPopup
+        trigger={
            <button className="bg-[white] sm:hidden block cursor-pointer text-[#0b3a46]
           px-6 py-3 rounded-full text-[16px] font-medium shadow-lg hover:scale-105 transition">
-           💬 <span className="sm:block hidden">Connect to</span> WhatsApp
+          <span className="sm:block hidden">Connect to</span> WhatsApp
           </button>
+        }
+      />
+
       </div>
     </nav>
   );

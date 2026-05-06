@@ -2,86 +2,75 @@
 
 import { useState } from "react";
 import { FaHeart, FaRegClock, FaShare } from "react-icons/fa";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import LeadPopup from "./leadpopup";
 
 const videos = [
   {
     id: 1,
     src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778058310/IMG_6174_pqzslx.mp4",
-    caption: "I'm extremely...",
+    caption: "From confused → started earning 💰",
   },
   {
     id: 2,
     src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778059247/IMG_6175_l3i9oy.mp4",
-    caption: "I'm extremely...",
+    caption: "First income feeling ❤️",
   },
   {
     id: 3,
     src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778061206/IMG_6173_pcbq7r.mp4",
-    caption: "Hey this is...",
+    caption: "Started from zero 🚀",
   },
   {
     id: 4,
     src: "https://res.cloudinary.com/dvjpyxdqy/video/upload/q_auto/f_auto/v1778063785/IMG_6188_vhv9dz.mp4",
-    caption: "I'm extremely...",
+    caption: "Now working with clients 💻",
   },
 ];
 
-function VideoCard({
-  video,
-  activeId,
-  setActiveId,
-}: any) {
+function VideoCard({ video, activeId, setActiveId }: any) {
   const [showMenu, setShowMenu] = useState(false);
   const isActive = activeId === video.id;
 
   return (
     <div
-      className={`relative 
-        w-full
-        rounded-2xl overflow-hidden shadow-2xl shadow-black/50 
-        border-2 border-white bg-zinc-900 aspect-[9/16] 
-        group cursor-pointer transition-all duration-500 
-        ${isActive ? "scale-105 z-20" : ""}
-      `}
+      className={`relative w-full rounded-2xl overflow-hidden shadow-xl 
+      border border-white/10 aspect-[9/16] group cursor-pointer transition-all duration-300
+      ${isActive ? "scale-105 z-20" : ""}`}
       onClick={() => setActiveId(isActive ? null : video.id)}
     >
       {isActive ? (
-  <video
-    src={video.src}
-    className="w-full h-full object-cover"
-    autoPlay
-    controls
-    playsInline
-  />
-) : (
+        <video
+          src={video.src}
+          className="w-full h-full object-cover"
+          autoPlay
+          controls
+          playsInline
+        />
+      ) : (
         <>
-          {/* ✅ Thumbnail अब video का first frame होगा */}
-          <div className="absolute inset-0">
-            <video
-              src={video.src}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              muted
-              preload="metadata"
-              playsInline
-            />
-            <div className="absolute inset-0 bg-[#f35014]/10"></div>
-          </div>
+          {/* ✅ Thumbnail via first frame */}
+          <video
+            src={video.src}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            muted
+            autoPlay
+            loop
+            playsInline
+          />
 
-          {/* Play Button */}
+          {/* ▶ Play Button */}
           <div className="absolute inset-0 flex items-center justify-center z-10">
-            <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full  backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:bg-white/25 transition">
-              <svg
-                className="w-4 h-4 sm:w-6 sm:h-6 text-white ml-0.5"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M8 5.14v14l11-7-11-7z" />
-              </svg>
+            <div className="w-12 h-12 rounded-full bg-black/40 backdrop-blur-sm border border-white/30 flex items-center justify-center group-hover:bg-black/60 transition">
+              ▶
             </div>
           </div>
         </>
       )}
+
+      {/* Caption */}
+      <div className="absolute bottom-2 left-2 right-2 text-white text-xs bg-black/60 px-2 py-1 rounded-md">
+        {video.caption}
+      </div>
 
       {/* Menu */}
       <div
@@ -93,7 +82,7 @@ function VideoCard({
       >
         <div className="flex gap-[3px] flex-col items-center">
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="w-1 h-1 rounded-full bg-white/70" />
+            <div key={i} className="w-1 h-1 rounded-full bg-white/80" />
           ))}
         </div>
       </div>
@@ -101,7 +90,7 @@ function VideoCard({
       {showMenu && (
         <div
           onClick={(e) => e.stopPropagation()}
-          className="absolute top-0 right-0 w-[200px] sm:w-[220px] h-full bg-black/95 backdrop-blur-md z-30 p-4 border-l border-white/10"
+          className="absolute top-0 right-0 w-[200px] h-full bg-black/95 backdrop-blur-md z-30 p-4 border-l border-white/10"
         >
           <div className="flex justify-between items-center mb-4">
             <p className="text-white text-sm font-semibold">More options</p>
@@ -134,15 +123,18 @@ export default function VideoTestimonialsSection() {
     <section className="w-full bg-white pt-10 sm:pt-20">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
 
+        {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-[#f35113]">
-            Student Success Stories
+            You’re Not Alone in This
           </h2>
-          <p className="text-gray-500 mt-3">
-            Real results from real people 🚀
+          <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            800+ girls have already started their journey.  
+            They once felt stuck… confused… just like you.
           </p>
         </div>
 
+        {/* Videos */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {videos.map((video) => (
             <VideoCard
@@ -154,10 +146,23 @@ export default function VideoTestimonialsSection() {
           ))}
         </div>
 
-        <div className="text-center mt-14 pb-12">
-          <button className="bg-[#f35113] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:scale-105 transition">
-            💬 Connect to WhatsApp
-          </button>
+        {/* Text */}
+        <div className="text-center mt-10 text-gray-700 text-sm md:text-base max-w-xl mx-auto">
+          <p>
+            They are now learning skills, getting freelance work,  
+            and building their own income — step by step.
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div className="text-center mt-10 pb-12">
+          <LeadPopup
+            trigger={
+              <button className="bg-[#f35113] cursor-pointer text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:scale-105 transition">
+                👉 Start Your Journey Today
+              </button>
+            }
+          />
         </div>
 
       </div>

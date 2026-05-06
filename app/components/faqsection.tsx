@@ -3,37 +3,38 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import LeadPopup from "./leadpopup";
 
 const faqs = [
   {
-    question: "Do I need any prior skills to start?",
+    question: "What if I don’t have any skills?",
     answer:
-      "No, you don’t need any prior skills. Everything is taught from scratch in a beginner-friendly way.",
+      "Perfect. That’s exactly where you start. Everything is taught from zero in a simple, beginner-friendly way.",
   },
   {
-    question: "How soon can I start earning?",
+    question: "What if I don’t have time?",
     answer:
-      "Many students start seeing results within a few weeks, depending on consistency and effort.",
+      "You don’t need hours every day. Even 1–2 hours with consistency is enough to start building skills and income.",
   },
   {
-    question: "Is this suitable for students or working professionals?",
+    question: "What if I fail?",
     answer:
-      "Yes, this is designed for students, job holders, and even housewives who want to build a side income.",
+      "You only fail when you don’t start. With the right guidance and support, you’ll always move forward step by step.",
+  },
+  {
+    question: "What if I’m not confident?",
+    answer:
+      "Confidence doesn’t come before starting. It builds after you take action and see small results.",
+  },
+  {
+    question: "Is this only for students?",
+    answer:
+      "No. This is for students, job holders, and even housewives — anyone who wants to earn independently.",
   },
   {
     question: "Will I get support during the journey?",
     answer:
-      "Absolutely! You get continuous mentorship, WhatsApp support, and access to a helpful community.",
-  },
-  {
-    question: "What kind of work will I be doing?",
-    answer:
-      "You’ll learn high-income skills like content creation, freelancing, AI tools, and digital services.",
-  },
-  {
-    question: "Is this a one-time course or ongoing support?",
-    answer:
-      "You get complete training along with ongoing support and updates to help you grow consistently.",
+      "Yes. You’ll get continuous mentorship, WhatsApp support, and a community so you’re never doing this alone.",
   },
 ];
 
@@ -48,13 +49,14 @@ export default function FAQSection() {
     <section className="w-full py-20 px-6 md:px-16 bg-white">
       <div className="max-w-4xl mx-auto">
 
-        {/* Heading */}
+        {/* 🔥 Heading */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-[#f35113]">
-            Frequently Asked Questions
+            “But what if…?”
           </h2>
-          <p className="text-gray-500 mt-3">
-            Everything you need to know before getting started
+          <p className="text-gray-600 mt-4 max-w-xl mx-auto">
+            These are the exact doubts everyone has before starting.
+            Let’s clear them.
           </p>
         </div>
 
@@ -71,12 +73,12 @@ export default function FAQSection() {
                 {/* Question */}
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer bg-[#f35113]  transition"
+                  className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer bg-[#f35113]"
                 >
                   <span className="font-medium text-white text-sm md:text-base">
                     {faq.question}
                   </span>
-                  <span className="text-[#fff]">
+                  <span className="text-white">
                     {isOpen ? <FaMinus /> : <FaPlus />}
                   </span>
                 </button>
@@ -100,11 +102,21 @@ export default function FAQSection() {
           })}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <button className="bg-[#f35113] cursor-pointer text-white px-8 py-4 rounded-full text-lg font-medium hover:scale-105 transition">
-            💬 Still have questions? Connect on WhatsApp
-          </button>
+        {/* 💡 Extra reassurance */}
+        <p className="text-center text-gray-600 text-sm mt-10">
+          You don’t need everything figured out.  
+          You just need to take the first step.
+        </p>
+
+        {/* 🚀 CTA */}
+        <div className="text-center mt-8">
+          <LeadPopup
+            trigger={
+              <button className="bg-[#f35113] cursor-pointer text-white px-8 py-4 rounded-full text-lg font-medium hover:scale-105 transition">
+                👉 Start Your Journey Today
+              </button>
+            }
+          />
         </div>
 
       </div>
